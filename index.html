@@ -46,7 +46,27 @@
 
     <!-- <h1 class="main-heading">350cc OF PURE MOTORCYCLING.</h1> -->
     <p class="sub-heading">Ride home a Royal Enfield this festive season. EMI starting at &#8377;1,888 per lakh*.</p>
-    <a href="#booking-form" class="test-ride-link">Book a Test Ride Today.</a>
+    <!-- <a href="#booking-form" class="test-ride-link">Book a Test Ride Today.</a> -->
+
+    <a href="#booking-form" class="test-ride-link" id="testRideLink">Book a Test Ride Today.</a>
+
+    <!-- ===== THANK YOU PANEL ===== -->
+    <div id="thankYouPanel" class="thankyou-panel" style="display:none;">
+      <!-- <div class="ty-bike-img-wrap">
+        <img id="tyBikeImg" src="" alt="" class="ty-bike-img" />
+      </div> -->
+      <div class="ty-icon">🎉</div>
+      <h2 class="ty-heading">Thank You, <span id="tyUserName"></span>!</h2>
+      <p class="ty-message">
+        Your finance enquiry has been received.<br/>
+        Our team at Royal Enfield will contact you within 2 hours.
+      </p>
+      <div class="ty-model-block">
+        <span class="ty-model-label">SELECTED MODEL</span>
+        <span class="ty-model-name" id="tyModelName"></span>
+      </div>
+      <a href="#" class="ty-reset-link" onclick="resetToForm(); return false;">&#8592; Submit Another Enquiry</a>
+    </div>
 
     <!-- ===== BOOKING FORM ===== -->
     <section id="booking-form" class="form-section">
@@ -228,6 +248,32 @@
       </div>
     </div>
   </footer> -->
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-contact-bar">
+      <p class="footer-contact-tagline">For further queries or appointments reach us at:</p>
+      <a href="tel:7046008488" class="footer-contact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+         +91-704-600-8488
+      </a>
+      <a href="mailto:support@royalenfield.com" class="footer-contact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Support@shreeaashapuraenterprise.in
+      </a>
+    </div>
+    <!-- <div class="footer-inner">
+      <div class="footer-col footer-copy">
+        <p>Copyright 2026 Royal Enfield | *Ex-Showroom Chennai *T&amp;C Apply</p>
+      </div>
+      <div class="footer-col footer-terms">
+        <a href="#">Terms and Conditions</a>
+      </div>
+      <div class="footer-col footer-contact-right">
+        <a href="mailto:support@royalenfield.com">support@royalenfield.com</a>
+      </div>
+    </div> -->
+  </footer>
 
   <!-- ===== ERROR / INFO POPUP ===== -->
   <div id="popupOverlay" class="popup-overlay">

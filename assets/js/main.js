@@ -222,23 +222,90 @@ function getValidationError() {
 }
 
 /* ---- Submit ---- */
+// function handleSubmit() {
+//   var error = getValidationError();
+//   if (error) {
+//     showPopup(error);
+//     return;
+//   }
+
+//   var btn = document.querySelector('.submit-btn');
+//   btn.disabled = true;
+//   btn.innerHTML = 'Submitting\u2026 <span class="btn-arrow">\u203A</span>';
+
+//   setTimeout(function () {
+//     showPopup('Thank you! Our team will reach out to you shortly.');
+//     btn.innerHTML = 'Submit <span class="btn-arrow">\u203A</span>';
+//     btn.disabled = false;
+//     resetForm();
+//   }, 1000);
+// }
+
 function handleSubmit() {
   var error = getValidationError();
-  if (error) {
-    showPopup(error);
-    return;
-  }
+  if (error) { showPopup(error); return; }
 
   var btn = document.querySelector('.submit-btn');
   btn.disabled = true;
   btn.innerHTML = 'Submitting\u2026 <span class="btn-arrow">\u203A</span>';
 
   setTimeout(function () {
-    showPopup('Thank you! Our team will reach out to you shortly.');
+    // Collect values
+    var userName  = document.getElementById('fullName').value.trim().split(' ')[0];
+    var modelVal  = document.getElementById('motorcycle').value;
+    var modelLabel = document.querySelector('#motoTrigger #motoLabel')
+                     ? document.getElementById('motoLabel').textContent
+                     : modelVal;
+
+    // Find bike image src from the selected moto-item
+    var activeItem = document.querySelector('.moto-item.active img');
+    var bikeImgSrc = activeItem ? activeItem.src : '';
+
+    // Populate thank-you panel
+    document.getElementById('tyUserName').textContent  = userName;
+    document.getElementById('tyModelName').textContent = modelLabel;
+
+    // var tyImg = document.getElementById('tyBikeImg');
+    // if (bikeImgSrc) {
+    //   tyImg.src = bikeImgSrc;
+    //   tyImg.alt = modelLabel;
+    //   tyImg.style.display = 'block';
+    // } else {
+    //   tyImg.style.display = 'none';
+    // }
+
+    // Hide form elements, show thank-you
+    document.getElementById('booking-form').style.display    = 'none';
+    document.getElementById('testRideLink').style.display    = 'none';
+    document.getElementById('thankYouPanel').style.display   = 'block';
+
     btn.innerHTML = 'Submit <span class="btn-arrow">\u203A</span>';
     btn.disabled = false;
     resetForm();
+
+    // Smooth scroll to thank-you
+    document.getElementById('thankYouPanel').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, 1000);
+}
+
+function resetToForm() {
+  document.getElementById('thankYouPanel').style.display  = 'none';
+  document.getElementById('booking-form').style.display   = '';
+  document.getElementById('testRideLink').style.display   = '';
+
+  // Clear motorcycle selection
+  document.getElementById('motorcycle').value            = '';
+  document.getElementById('motoLabel').textContent       = 'Select Motorcycle*';
+  document.getElementById('motoTrigger').classList.remove('selected');
+  document.querySelectorAll('.moto-item').forEach(function(item) {
+    item.classList.remove('active');
+  });
+
+  // Close moto panel if open
+  document.getElementById('motoPanel').classList.remove('open');
+  document.getElementById('motoTrigger').classList.remove('open');
+
+  document.getElementById('booking-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 /* ---- Reset ---- */

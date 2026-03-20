@@ -329,7 +329,7 @@ img { max-width: 100%; height: auto; display: block; }
 .site-footer {
   background: var(--re-black);
   color: #fff;
-  padding: 18px 24px 0px;
+  /* padding: 18px 24px 0px; */
 }
 
 .footer-inner {
@@ -746,4 +746,187 @@ img { max-width: 100%; height: auto; display: block; }
   .moto-grid  { grid-template-columns: repeat(2, 1fr); }
   .moto-item--center { grid-column: 1 / -1; }
   .moto-item img { height: 56px; }
+}
+
+/* =========================================================
+   THANK YOU PANEL
+   ========================================================= */
+
+.thankyou-panel {
+  max-width: 480px;
+  margin: 0 auto 40px;
+  text-align: center;
+  animation: fadeUp .5s ease both;
+}
+
+/* Selected bike photo */
+/* .ty-bike-img-wrap {
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto 10px;
+  background: transparent;
+}
+
+.ty-bike-img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  display: block;
+} */
+
+/* Selected bike photo — circular */
+.ty-bike-img-wrap {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3px solid #ddd;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.ty-bike-img {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 480px) {
+  .ty-bike-img-wrap {
+    width: 130px;
+    height: 130px;
+  }
+  .ty-bike-img {
+    width: 105px;
+    height: 105px;
+  }
+}
+
+/* Celebration icon */
+.ty-icon {
+  font-size: 38px;
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+/* Heading */
+.ty-heading {
+  font-family: var(--font-head);
+  font-size: clamp(22px, 4vw, 30px);
+  font-weight: 700;
+  color: var(--re-black);
+  margin-bottom: 14px;
+}
+
+/* Message */
+.ty-message {
+  font-size: 14.5px;
+  color: #444;
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+
+/* Selected model block */
+.ty-model-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  border-top: 1px solid #bbb;
+  padding-top: 18px;
+  margin-bottom: 28px;
+  text-align: left;
+}
+
+.ty-model-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #777;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.ty-model-name {
+  font-family: var(--font-head);
+  font-size: clamp(18px, 3vw, 24px);
+  font-weight: 700;
+  color: var(--re-black);
+}
+
+/* Submit another link */
+.ty-reset-link {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #444;
+  text-decoration: none;
+  border-bottom: 1.5px solid #aaa;
+  padding-bottom: 2px;
+  transition: color .2s, border-color .2s;
+}
+.ty-reset-link:hover {
+  color: var(--re-red);
+  border-color: var(--re-red);
+}
+
+/* =========================================================
+   FOOTER CONTACT BAR
+   ========================================================= */
+
+.footer-contact-bar {
+  background: #1a1a1a;
+  text-align: center;
+  padding: 28px 20px 24px;
+  border-bottom: 1px solid #333;
+}
+
+.footer-contact-tagline {
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.footer-contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: clamp(15px, 2.5vw, 18px);
+  font-weight: 700;
+  font-family: var(--font-body);
+  margin: 6px 18px;
+  transition: color .2s;
+}
+.footer-contact-item:hover { color: var(--re-red); }
+
+.footer-contact-item svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  stroke: currentColor;
+}
+
+/* Responsive footer bar */
+@media (max-width: 560px) {
+  .footer-contact-item {
+    display: flex;
+    margin: 8px auto;
+    justify-content: center;
+  }
+}
+
+/* =========================================================
+   THANK YOU RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .ty-bike-img { height: 140px; }
+  .ty-model-block { align-items: center; text-align: center; }
 }
